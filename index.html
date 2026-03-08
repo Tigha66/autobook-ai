@@ -12,66 +12,123 @@
         * { margin:0; padding:0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background: white; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+        
+        /* Urgency Banner */
+        .urgency-banner { background: linear-gradient(90deg, #f59e0b, #ef4444); color: white; text-align: center; padding: 12px; font-weight: 600; }
+        .urgency-banner i { margin-right: 8px; }
+        
+        header { background: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        nav a { text-decoration: none; color: var(--dark); margin-left: 30px; font-weight: 500; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+        nav a { text-decoration: none; color: var(--dark); margin-left: 25px; font-weight: 500; }
         nav a:hover { color: var(--primary); }
-        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-2px); }
         .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
-        .hero { background: linear-gradient(135deg, #F0FDFA, #CCFBF1); padding: 100px 0; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
-        .features { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
-        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
-        .feature-card h3 { margin-bottom: 12px; }
-        .feature-card p { color: #64748b; }
-        .how-it-works { background: var(--light); padding: 80px 0; }
-        .steps { max-width: 800px; margin: 0 auto; }
-        .step { display: flex; gap: 20px; margin-bottom: 40px; align-items: flex-start; }
-        .step-num { width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
-        .step h3 { margin-bottom: 8px; }
-        .testimonials { padding: 80px 0; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testimonial-card { background: var(--light); padding: 30px; border-radius: 20px; }
-        .testimonial-card p { font-style: italic; margin-bottom: 15px; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #F0FDFA, #CCFBF1); padding: 80px 0; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: #64748b; max-width: 650px; margin: 0 auto 25px; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 15px; }
+        
+        /* Video Demo */
+        .video-demo { max-width: 700px; margin: 30px auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .video-placeholder { background: var(--dark); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .video-placeholder i { font-size: 4rem; color: white; opacity: 0.9; transition: transform 0.3s; }
+        .video-placeholder:hover i { transform: scale(1.1); }
+        .video-placeholder p { color: white; margin-top: 15px; font-weight: 500; }
+        
+        /* Trust Badges */
+        .trust-badges { background: white; padding: 30px 0; text-align: center; border-bottom: 1px solid #eee; }
+        .trust-badges p { color: #64748b; font-size: 0.9rem; margin-bottom: 15px; }
+        .trust-icons { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .trust-item i { color: var(--primary); }
+        
+        .features { padding: 70px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 10px; }
+        .section-title p { color: #64748b; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .feature-card { background: var(--light); padding: 30px; border-radius: 16px; transition: transform 0.3s, box-shadow 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .feature-icon { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 15px; }
+        .feature-card h3 { margin-bottom: 10px; font-size: 1.1rem; }
+        .feature-card p { color: #64748b; font-size: 0.95rem; }
+        .feature-tag { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; margin-top: 10px; font-weight: 500; }
+        
+        .how-it-works { background: var(--light); padding: 70px 0; }
+        .steps { max-width: 750px; margin: 0 auto; }
+        .step { display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-start; }
+        .step-num { width: 38px; height: 38px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .step h3 { margin-bottom: 6px; font-size: 1.1rem; }
+        .step p { color: #64748b; font-size: 0.95rem; }
+        
+        .testimonials { padding: 70px 0; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .testimonial-card { background: var(--light); padding: 28px; border-radius: 16px; position: relative; }
+        .testimonial-card::before { content: '"'; font-size: 4rem; color: var(--primary); opacity: 0.2; position: absolute; top: 10px; left: 20px; font-family: serif; }
+        .testimonial-card p { font-style: italic; margin-bottom: 15px; position: relative; z-index: 1; }
         .testimonial-card strong { color: var(--primary); }
-        .pricing { padding: 80px 0; background: var(--light); }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
-        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
-        .pricing-card.featured { background: var(--primary); color: white; }
-        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        
+        .pricing { padding: 70px 0; background: var(--light); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 850px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 35px; border-radius: 16px; text-align: center; position: relative; }
+        .pricing-card.featured { background: var(--primary); color: white; transform: scale(1.05); }
+        .pricing-card .popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .price { font-size: 2.8rem; font-weight: 700; margin: 15px 0; }
+        .pricing-card.featured .price { color: white; }
+        .pricing-desc { font-size: 0.9rem; margin-bottom: 15px; opacity: 0.9; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
-        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.95rem; }
         .pricing-card.featured li { border-color: rgba(255,255,255,0.2); }
-        .why-us { padding: 80px 0; }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .why-card { text-align: center; padding: 30px; }
-        .why-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .cta { padding: 80px 0; background: var(--dark); color: white; text-align: center; }
-        .cta h2 { margin-bottom: 20px; }
-        .cta p { margin-bottom: 30px; opacity: 0.8; }
-        footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; }
-        footer a { color: #94a3b8; text-decoration: none; margin: 0 15px; }
-        .contact-form { max-width: 600px; margin: 40px auto 0; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit; }
-        .form-group textarea { height: 120px; resize: vertical; }
+        .pricing-card i { color: var(--primary); margin-right: 8px; }
+        .pricing-card.featured i { color: white; }
+        
+        .why-us { padding: 70px 0; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .why-card { text-align: center; padding: 25px; }
+        .why-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 12px; }
+        .why-card h3 { margin-bottom: 8px; font-size: 1rem; }
+        .why-card p { color: #64748b; font-size: 0.9rem; }
+        
+        .cta { padding: 70px 0; background: var(--dark); color: white; text-align: center; }
+        .cta h2 { margin-bottom: 15px; }
+        .cta p { margin-bottom: 25px; opacity: 0.8; }
+        
+        .contact-form { max-width: 500px; margin: 30px auto 0; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 0.9rem; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 18px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); }
         .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+        
+        /* Sticky CTA */
+        .sticky-cta { position: fixed; bottom: 20px; right: 20px; z-index: 999; display: none; }
+        .sticky-cta .btn { box-shadow: 0 10px 30px rgba(20, 184, 166, 0.4); }
+        
+        footer { background: #0f172a; color: #94a3b8; padding: 35px 0; text-align: center; }
+        footer a { color: #94a3b8; text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+        footer a:hover { color: white; }
+        .footer-contact { margin-top: 15px; }
+        .footer-contact i { margin-right: 6px; }
+        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.2rem; }
             nav { display: none; }
+            .pricing-card.featured { transform: none; }
+            .trust-icons { gap: 20px; }
         }
     </style>
 </head>
 <body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <i class="fas fa-fire"></i> Limited Time: Sign up today and get an additional 7 days FREE! Offer ends soon.
+    </div>
+
     <header>
         <div class="container">
             <div class="logo">🤖 AutoBook AI</div>
@@ -89,12 +146,35 @@
     <section class="hero">
         <div class="container">
             <span class="hero-tag">🚀 No Coding Required</span>
-            <h1>Revolutionize Your Appointment Scheduling & Lead Generation with AI</h1>
-            <p>Automate your business's lead qualification, appointment booking, and client follow-ups — so you can focus on what truly matters: growing your business.</p>
+            <h1>Automate Your Appointments & Capture More Leads with AI</h1>
+            <p>Qualify leads, book appointments, and nurture customers — on autopilot. 24/7.</p>
             <a href="#contact" class="btn btn-accent">Start Your Free Trial</a>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">No credit card required • 14-day free trial • 5-minute setup</p>
+            <p style="margin-top: 12px; font-size: 0.85rem; color: #64748b;">No credit card required • 14-day free trial • 5-minute setup</p>
+            
+            <!-- Video Demo -->
+            <div class="video-demo">
+                <div class="video-placeholder" onclick="alert('Demo video would play here!')">
+                    <div>
+                        <i class="fas fa-play-circle"></i>
+                        <p>Watch AI in Action (45 sec)</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="container">
+            <p>Trusted by 500+ businesses across the UK</p>
+            <div class="trust-icons">
+                <div class="trust-item"><i class="fas fa-star"></i> 4.9/5 Rating</div>
+                <div class="trust-item"><i class="fas fa-shield-alt"></i> SSL Secured</div>
+                <div class="trust-item"><i class="fas fa-clock"></i> 24/7 Support</div>
+                <div class="trust-item"><i class="fas fa-undo"></i> 30-Day Guarantee</div>
+            </div>
+        </div>
+    </div>
 
     <section class="features" id="features">
         <div class="container">
@@ -106,32 +186,38 @@
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-filter"></i></div>
                     <h3>Lead Qualification</h3>
-                    <p>Automatically qualify leads with personalized questions. Filter high-quality prospects and focus on clients ready to buy.</p>
+                    <p>Automatically qualify leads with smart questions. Filter high-quality prospects and focus on clients ready to buy.</p>
+                    <span class="feature-tag">Perfect for: Lawyers, Therapists, Consultants</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
                     <h3>Real-Time Booking</h3>
-                    <p>Offer clients real-time availability. They book seamlessly — syncs with your calendar to avoid double bookings.</p>
+                    <p>Clients see your availability and book instantly. Syncs with Google Calendar, Outlook, or Calendly.</p>
+                    <span class="feature-tag">Great for: Salons, Dentists, Plumbers</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-bell"></i></div>
                     <h3>Automated Reminders</h3>
-                    <p>Send automatic SMS/WhatsApp confirmations and reminders to reduce no-shows by up to 80%.</p>
+                    <p>Send SMS & WhatsApp reminders to reduce no-shows by up to 80%.</p>
+                    <span class="feature-tag">Works for: Restaurants, Gyms, Medical</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Multi-Channel Support</h3>
-                    <p>Reach customers on their preferred platforms — SMS, WhatsApp, web chat, or web widget.</p>
+                    <h3>Multi-Channel</h3>
+                    <p>Reach customers on WhatsApp, SMS, web chat, or your website.</p>
+                    <span class="feature-tag">Any Business</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Gain deep insights into lead generation, conversion rates, and customer engagement. Track your ROI effortlessly.</p>
+                    <h3>Analytics</h3>
+                    <p>Track leads, conversions, and ROI with detailed reports.</p>
+                    <span class="feature-tag">Data-Driven</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-robot"></i></div>
                     <h3>Lead Nurturing</h3>
-                    <p>Follow-ups, drip campaigns, and retargeting keep leads engaged, even after the initial contact.</p>
+                    <p>Automated follow-ups and drip campaigns that convert prospects.</p>
+                    <span class="feature-tag">Sales Boost</span>
                 </div>
             </div>
         </div>
@@ -141,35 +227,35 @@
         <div class="container">
             <div class="section-title">
                 <h2>How It Works</h2>
-                <p>Get started in minutes — no technical knowledge required</p>
+                <p>Get started in minutes — no technical knowledge needed</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-num">1</div>
                     <div>
-                        <h3>Intelligent Lead Qualification</h3>
-                        <p>The bot engages with visitors, asking smart questions to qualify leads based on their needs, budget, and urgency.</p>
+                        <h3>Lead Qualification</h3>
+                        <p>Bot engages visitors, asks smart questions to qualify based on needs, budget, and readiness.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">2</div>
                     <div>
-                        <h3>Seamless Appointment Booking</h3>
-                        <p>Leads choose a suitable time based on your availability. The bot automatically syncs with your calendar to ensure no clashes.</p>
+                        <h3>Book Appointment</h3>
+                        <p>Leads choose a time slot. Bot syncs with your calendar — no double bookings.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">3</div>
                     <div>
                         <h3>Automated Reminders</h3>
-                        <p>Customers get appointment confirmations and reminders via SMS or WhatsApp, ensuring they stay on track.</p>
+                        <p>Confirmations and reminders sent via SMS/WhatsApp. No-shows plummet.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">4</div>
                     <div>
-                        <h3>Continuous Lead Nurturing</h3>
-                        <p>Follow-ups, drip campaigns, and retargeting keep your leads engaged — turning prospects into customers.</p>
+                        <h3>Lead Nurturing</h3>
+                        <p>Follow-ups keep leads warm until they're ready to buy.</p>
                     </div>
                 </div>
             </div>
@@ -183,15 +269,15 @@
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>"The bot has transformed our lead generation and booking process! We've seen a 25% increase in conversions and no more double-bookings. Highly recommended!"</p>
+                    <p>"Transformed our booking! 25% more conversions, zero double-bookings. Setup took 5 minutes."</p>
                     <strong>— Sarah T., Dental Clinic</strong>
                 </div>
                 <div class="testimonial-card">
-                    <p>"With the automated reminders and follow-ups, we've reduced no-shows significantly. This tool has paid for itself in the first month!"</p>
+                    <p>"Reduced no-shows by 70%. Paid for itself in week one. Our receptionists can now focus on patients."</p>
                     <strong>— Mike R., Plumbing Business</strong>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Setup took 5 minutes. Now our salon books appointments 24/7 even when we're closed. Game changer."</p>
+                    <p>"Salon books 24/7 now — even at 2am. Best investment we've made."</p>
                     <strong>— Lisa M., Hair Salon</strong>
                 </div>
             </div>
@@ -201,40 +287,45 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
-                <h2>Affordable Plans for Every Business</h2>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your business</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter</h3>
                     <div class="price">£147<span>/mo</span></div>
+                    <p class="pricing-desc">Perfect for small businesses starting out</p>
                     <ul>
-                        <li>50 bookings/month</li>
-                        <li>Lead qualification</li>
-                        <li>Calendar sync</li>
-                        <li>Email support</li>
+                        <li><i class="fas fa-check"></i> 50 bookings/month</li>
+                        <li><i class="fas fa-check"></i> Lead qualification</li>
+                        <li><i class="fas fa-check"></i> Calendar sync</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary" style="width:100%;">Start Free Trial</a>
                 </div>
                 <div class="pricing-card featured">
+                    <span class="popular">MOST POPULAR</span>
                     <h3>Growth</h3>
                     <div class="price">£297<span>/mo</span></div>
+                    <p class="pricing-desc">For growing businesses ready to scale</p>
                     <ul>
-                        <li>200 bookings/month</li>
-                        <li>SMS & WhatsApp reminders</li>
-                        <li>Advanced analytics</li>
-                        <li>Lead nurturing</li>
-                        <li>Priority support</li>
+                        <li><i class="fas fa-check"></i> 200 bookings/month</li>
+                        <li><i class="fas fa-check"></i> SMS & WhatsApp reminders</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Lead nurturing</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
                     </ul>
                     <a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free Trial</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="price">£497<span>/mo</span></div>
+                    <p class="pricing-desc">For larger organizations</p>
                     <ul>
-                        <li>Unlimited bookings</li>
-                        <li>Custom integrations</li>
-                        <li>Dedicated account manager</li>
-                        <li>Custom workflows</li>
+                        <li><i class="fas fa-check"></i> Unlimited bookings</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> Custom workflows</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a>
                 </div>
@@ -245,28 +336,28 @@
     <section class="why-us">
         <div class="container">
             <div class="section-title">
-                <h2>Why SMBs Love AutoBook AI</h2>
+                <h2>Why SMBs Choose AutoBook AI</h2>
             </div>
             <div class="why-grid">
                 <div class="why-card">
                     <i class="fas fa-clock"></i>
                     <h3>Time-Saving</h3>
-                    <p>Automate repetitive tasks so you can focus on your core business.</p>
+                    <p>Automate repetitive tasks. Focus on what matters.</p>
                 </div>
                 <div class="why-card">
                     <i class="fas fa-rocket"></i>
                     <h3>Scalable</h3>
-                    <p>As your business grows, our bot scales with you.</p>
+                    <p>Grows with your business automatically.</p>
                 </div>
                 <div class="why-card">
                     <i class="fas fa-pound-sign"></i>
                     <h3>Affordable</h3>
-                    <p>Designed for small and medium-sized businesses.</p>
+                    <p>Designed for small & medium businesses.</p>
                 </div>
                 <div class="why-card">
                     <i class="fas fa-plug"></i>
                     <h3>Multi-Channel</h3>
-                    <p>Engage your customers wherever they are.</p>
+                    <p>Engage customers wherever they are.</p>
                 </div>
             </div>
         </div>
@@ -274,32 +365,34 @@
 
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Get Started Today and Transform Your Business</h2>
-            <p>No credit card required. Simple setup, no technical knowledge needed.</p>
+            <h2>Get Started Today</h2>
+            <p>No credit card required. Simple setup in 5 minutes.</p>
             <a href="#" class="btn btn-accent">Start Your Free Trial</a>
+            
+            <!-- Simplified Form -->
             <div class="contact-form">
                 <form id="signupForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
-                        <label>Business Name</label>
-                        <input type="text" name="business" required placeholder="Your business name">
+                        <label>Name *</label>
+                        <input type="text" name="name" required placeholder="Your name">
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
+                        <label>Email *</label>
                         <input type="email" name="email" required placeholder="you@business.com">
                     </div>
                     <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" name="phone" placeholder="+44 7700 900000">
-                    </div>
-                    <div class="form-group">
-                        <label>Interest</label>
+                        <label>Interested Plan</label>
                         <select name="plan">
                             <option value="starter">Starter - £147/mo</option>
-                            <option value="growth">Growth - £297/mo</option>
+                            <option value="growth" selected>Growth - £297/mo</option>
                             <option value="enterprise">Enterprise - £497/mo</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-accent" style="width:100%;">Request Demo</button>
+                   ="form-group" <div class style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="demo" name="demo" style="width: auto;">
+                        <label for="demo" style="margin: 0; font-weight: 400;">I'd like a personalized demo</label>
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width:100%;">Get Started Now</button>
                 </form>
                 <div class="success-message" id="successMessage">
                     ✓ Thanks! We'll contact you within 24 hours to set up your demo.
@@ -308,6 +401,11 @@
         </div>
     </section>
 
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <a href="#contact" class="btn btn-primary">Start Free Trial</a>
+    </div>
+
     <footer>
         <div class="container">
             <p>
@@ -315,12 +413,25 @@
                 <a href="#">Terms of Service</a> |
                 <a href="#">Contact Us</a>
             </p>
-            <p style="margin-top: 15px;">📧 hello@autobook.ai | 📱 +44 7700 900000</p>
-            <p style="margin-top: 10px;">© 2026 AutoBook AI. All rights reserved.</p>
+            <div class="footer-contact">
+                <span><i class="fas fa-envelope"></i> hello@autobook.ai</span>
+                <span style="margin-left: 20px;"><i class="fas fa-phone"></i> +44 7700 900000</span>
+            </div>
+            <p style="margin-top: 15px;">© 2026 AutoBook AI. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Sticky CTA show on scroll
+        window.addEventListener('scroll', function() {
+            const stickyCta = document.querySelector('.sticky-cta');
+            if (window.scrollY > 500) {
+                stickyCta.style.display = 'block';
+            } else {
+                stickyCta.style.display = 'none';
+            }
+        });
+        
         function handleSubmit(e) {
             e.preventDefault();
             document.getElementById('signupForm').style.display = 'none';
